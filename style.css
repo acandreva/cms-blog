@@ -1,64 +1,373 @@
 /*
-Theme Name: Allison Blank Theme
-Theme URI: URL for Allison Blank
+Theme Name: Allison Blog Theme
+Theme URI: URL for Allison Blog
 Author: Allison Logan
-Description: Blank theme for WIE course
+Description: Blog theme for WIE course
 Version: 1.0
 License: Open
-Text Domain: allison_logan_blank_template
+Text Domain: allison_logan_blog_template
 */
 
 @import url("css/skeleton.css");
 @import url("css/normalize.css");
 
+@font-face {
+    font-family: "Avenir";
+    src: local('Avenir'),
+        url("fonts/Avenir.ttc") format("truetype");
+}
+
 * {
     color: #000000;
     font-size: 14px;
     line-height: 16px;
+    font-family: Avenir;
+    font-weight: normal;
 }
 
 .clear {clear: both;}
 
-h1 {font-size: 3.0rem;}
-h2 {font-size: 2.6rem;}
-h3 {font-size: 2.3rem;}
 h4 {font-size: 2.1rem;}
 h5 {font-size: 1.6rem;}
 h6 {font-size: 1.1rem;}
 
-/*--- Menu --- */
+a {
+    color: #6e9329;
+    text-decoration: none;
+}
 
-.blank-menu-header {
-    text-align: left;
+a:hover {
+    color: #6e9329;
+    text-decoration: underline;
+}
+
+/*Wordpress Image Alignment*/
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: none; margin: 1.5em auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: none; margin: 1.5em auto}
+
+/*--- Search ---*/
+.searchbx {
+    margin-top: 35px;
+    display: block;
+    text-align: right;
+}
+
+.searchbx input, .error_search input {
+    border: 1px #4D4D4D solid;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Avenir;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: Avenir;
+    color: #b7d333;
+    background-color: #fff;
+}
+
+.error_search input {
+    color: #fff;
+    background-color: #4d4d4d;
+}
+
+.searchbx input[type="search"], .error_search input[type="search"] {
+    color: #000;
+    background-color: #fff;
+}
+
+.hide-search, .hide-content {
+    display: none;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin: 10% 0;
+}
+
+.search-terms {
+    color: #b7d333;
+}
+
+/*---Header---*/
+header {
+    text-align: center;
+    margin: 25% 0 40%;
+}
+
+header h1 a {
+    color: #b7d333;
+    text-decoration: none;
+    line-height: 45px;
+    font-size: 5rem;
+}
+
+header h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+header p {
+    color: #fff;
+    font-style: oblique;
+}
+
+/*--- Menu --- */
+.blog-menu-header {
+    text-align: right;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-.blank-menu-header ul {
-    margin: 0; 
-    padding: 0; 
-    list-style-type: none; 
-    list-style-image: none; 
+.blog-menu-header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-.blank-menu-header li {
+.blog-menu-header li {
     display: inline;
 }
 
-.blank-menu-header ul li a {
-    text-decoration: none;  
+.blog-menu-header ul li a {
+    color: #fff;
+    text-decoration: none;
     margin: 4px;
-    padding: 5px 0px 5px 40px; 
-    font-weight: 300;
-    font-size: 1.1rem;
+    padding: 5px 0px 5px 20px;
+    font-size: 1.8rem;
 }
 
-.blank-menu-header ul li a:hover {
-    color: #cccccc;
+.blog-menu-header ul li a:hover {
+    color: #b7d333;
 }
+
 
 /*--Front Page--*/
-.post-thumbnail-container {
-    padding: 2px;
-    margin: 0 10px 10px 0;
+h4, h4 a, h4 a:hover {
+    color: #b7d333;
+    text-decoration: none;
+    font-size: 1.7rem
+}
+
+h3, h3 a, h3 a:hover {
+    color: #000;
+    text-decoration: none;
+    font-size: 2.5rem;
+    line-height: 32px;
+}
+
+h3 a:hover {
+    text-decoration: underline;
+}
+
+.maincontent {
+    width: 100%;
+    margin: auto;
+}
+
+.othercontent {
+    width: 100%;
+    margin: 10% auto;
+}
+
+.home-posts, .search-posts {
+    margin: 10% 0 0;
+    border-bottom: solid #000 1px;
+}
+
+.metainfo {
+    padding: 6.5px 0;
+    color: #757575;
+    font-style: oblique;
+}
+
+.metainfo a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.metainfo a:hover {
+    color: #6e9329;
+    text-decoration: underline;
+}
+
+.meta-glyph {
+    margin: 0 5px;
+}
+
+.metainfo img {
+    vertical-align: middle;
+}
+
+.social-shortcode {
+    display: none;
+}
+
+.next_prev {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/*--Contact Form--*/
+#contactform {
+    background: #4d4d4d;
+    width: 95%;
+    max-width: 295px;
+    padding: 15px;
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    margin: 0 auto 5%;
+}
+
+#contactform label {
+    color: #b7d333;
+    font-size: 20px;
+    font-family: Avenir;
+    display: block;
+}
+
+#contactform input {
+    border: 1px #4D4D4D solid;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Avenir;
+    font-size: 12px;
+    display: block;
+}
+
+#contactform input[type="text"], #contactform input[type="email"], textarea {
+    width: 95%;
+    padding: 5px;
+    margin: 10px 5px;
+}
+
+#contactform textarea {
+    border: 1px #4D4D4D solid;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 50px;
+}
+
+#contactform input[type="submit"], #contactform input[type="reset"] {
+    width: 80px;
+    margin-right: 5%;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Avenir;
+    color: #fff;
+    background-color: #aaa; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    display: inline;
+}
+
+
+/*--- Footer---*/
+footer {
+    background-color: #4d4d4d;
+    padding: 10px 0;
+}
+
+footer h3 {
+    color: #b7d333;
+    font-size: 2.5rem;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #b7d333;
+}
+
+footer p {
+    text-align: center;
+    color: #fff;
+}
+
+/*~~~~~~NEW MEDIA QUERY~~~~~~~*/
+@media screen and (min-width: 467px) {
+    /*Wordpress Image Alignment*/
+    img.aligncenter, a img.aligncenter {display: block}
+
+    /*--- Search ---*/
+    .searchbx {
+        text-align: left;
+    }
+
+    /*---Header---*/
+    header h1 a {
+        font-size: 6rem;
+    }
+
+    /*---Main Content---*/
+    .maincontent {
+        width: 80%;
+        margin: auto;
+    }
+
+    h3, h3 a, h3 a:hover {
+    font-size: 3rem;
+    }
+
+    .metainfo {
+        float: left;
+    }
+
+    .othercontent {
+        width: 80%;
+        margin: 10% auto;
+    }
+
+    .social-shortcode {
+        display: inline;
+    }
+
+    .hide-content {
+        display: block;
+    }
+}
+
+/*~~~~~~NEW MEDIA QUERY~~~~~~~*/
+@media screen and (min-width: 760px) {
+    /*---Main Content---*/
+    .maincontent {
+        width: 60%;
+        margin: auto;
+    }
+    
+    .othercontent {
+        width: 60%;
+        margin: 10% auto;
+    }
+}
+
+/*~~~~~~NEW MEDIA QUERY~~~~~~~*/
+@media screen and (min-width: 818px) {
+    /*---Main Content---*/
+    .maincontent {
+        width: 45%;
+        margin: auto;
+    }
+    
+    .othercontent {
+        width: 45%;
+        margin: 10% auto;
+    }
 }
