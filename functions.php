@@ -3,52 +3,41 @@
 /*-------------- Enable Widgets--------------- */
 
 function blank_widgets_init() {
-    register_sidebar( array(
-        'name' => ('First Widget'),
-        'id' => 'first-widget',
-        'description' => 'Widget for our sidebar on pages', 
-        'before_widget' => '<div class="widget-sidebar">', 
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
-        ));
 /*--- Footer Widget One--- */
     register_sidebar( array(
         'name' => ('Footer Widget One'),
         'id' => 'footer-widget-one',
-        'description' => 'First widget for our footer', 
+        'description' => 'First footer widget', 
         'before_widget' => '<div class="widget-footer">', 
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
         ));
 /*--- Footer Widget Two--- */
     register_sidebar( array(
         'name' => ('Footer Widget Two'),
         'id' => 'footer-widget-two',
-        'description' => 'Second widget for our footer', 
+        'description' => 'Second footer widget', 
         'before_widget' => '<div class="widget-footer">', 
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
         ));
 /*--- Footer Widget Three--- */
     register_sidebar( array(
         'name' => ('Footer Widget Three'),
         'id' => 'footer-widget-three',
-        'description' => 'Third widget for our footer', 
+        'description' => 'Third footer widget', 
         'before_widget' => '<div class="widget-footer">',
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
         ));
     }
 add_action('widgets_init', 'blank_widgets_init');
 
-/*-------------- Enable Menu--------------- */
+/*-------------- Enable Menu --------------- */
 add_theme_support('menus');
 
-/*-------------- Enable Post Thumbnails--------------- */
-add_theme_support('post-thumbnails');
-
-?>
+/*-------------- Search Form --------------- */
+add_theme_support( 'html5', array( 'search-form' ) );
